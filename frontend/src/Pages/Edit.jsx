@@ -17,7 +17,7 @@ const EditTask = () => {
   useEffect(() => {
     const fetchTask = async () => {
       try {
-        const response = await axios.get(`https://task-tracking-system-1.onrender.com/${taskId}`);
+        const response = await axios.get(`https://task-tracking-system-1.onrender.com/api/tasks/${taskId}`);
         const task = response.data;
         setForm({
           title: task.title,
@@ -41,7 +41,7 @@ const EditTask = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        await axios.put(`https://task-tracking-system-1.onrender.com/${taskId}`, form);
+        await axios.put(`https://task-tracking-system-1.onrender.com/api/tasks/${taskId}`, form);
       alert("Task updated successfully!");
       navigate("/dashboard");
     } catch (error) {
