@@ -26,7 +26,7 @@ const CreateTask = () => {
     }
 
     try {
-      const response = await axios.post(`https://task-tracking-system-1.onrender.com/${userId}`, {
+      const response = await axios.post(`https://task-tracking-system-1.onrender.com/api/tasks/${userId}`, {
         ...form,
         user: userId,
       });
