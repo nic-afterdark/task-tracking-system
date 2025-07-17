@@ -15,7 +15,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get(`https://task-tracking-system-1.onrender.com/${userId}`);
+        const response = await axios.get(`https://task-tracking-system-1.onrender.com/api/tasks/${userId}`);
         setTasks(response.data);
       } catch (error) {
         console.error("Error fetching tasks:", error.message);
