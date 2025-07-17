@@ -34,7 +34,7 @@ const Dashboard = () => {
   if (!confirmDelete) return;
 
   try {
-    await axios.delete(`https://task-tracking-system-1.onrender.com/${taskId}`);
+    await axios.delete(`https://task-tracking-system-1.onrender.com/api/tasks${taskId}`);
     setTasks((prevTasks) => prevTasks.filter((task) => task._id !== taskId));
     alert("Task deleted successfully.");
   } catch (error) {
