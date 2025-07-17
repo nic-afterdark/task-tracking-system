@@ -15,7 +15,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/tasks/${userId}`);
+        const response = await axios.get(`https://task-tracking-system-1.onrender.com/${userId}`);
         setTasks(response.data);
       } catch (error) {
         console.error("Error fetching tasks:", error.message);
@@ -34,7 +34,7 @@ const Dashboard = () => {
   if (!confirmDelete) return;
 
   try {
-    await axios.delete(`http://localhost:8080/api/tasks/${taskId}`);
+    await axios.delete(`https://task-tracking-system-1.onrender.com/${taskId}`);
     setTasks((prevTasks) => prevTasks.filter((task) => task._id !== taskId));
     alert("Task deleted successfully.");
   } catch (error) {
